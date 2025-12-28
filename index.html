@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Virat Kohli | The King</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Teko:wght@500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <nav id="navbar">
+        <div class="logo">VK<span>18</span></div>
+        <ul class="nav-links">
+            <li><a href="#hero" class="active">Home</a></li>
+            <li><a href="#bio">Bio</a></li>
+            <li><a href="#timeline">Timeline</a></li>
+            <li><a href="#stats">Stats</a></li>
+            <li><a href="#gallery">Gallery</a></li>
+            <li><a href="#contact">Fan Zone</a></li>
+        </ul>
+        <div class="theme-toggle" id="theme-toggle">
+            <i class="fas fa-moon"></i>
+        </div>
+        <div class="hamburger">
+            <i class="fas fa-bars"></i>
+        </div>
+    </nav>
+
+    <section id="hero" style="
+        background: linear-gradient(rgba(0,0,0,0.65), rgba(0,0,0,0.65)),
+        url('https://wallpapercave.com/wp/wp12122631.jpg');
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+    ">
+        <div class="overlay"></div>
+        <div class="hero-content parallax" data-speed="0.5">
+            <h1>VIRAT <span>KOHLI</span></h1>
+            <p>The Run Machine. The King. The Legend.</p>
+            <a href="#stats" class="cta-btn">View Records</a>
+        </div>
+    </section>
+
+    <section id="bio" class="section-padding">
+        <div class="container">
+            <h2 class="section-title">The Man Behind the Bat</h2>
+            <p class="bio-text">
+                Born in Delhi, Virat Kohli rose through the ranks to become one of the greatest cricketers of all time. 
+                Known for his aggressive captaincy and unparalleled consistency, he has redefined the art of chasing.
+            </p>
+            <div class="counters-container">
+                <div class="counter-box">
+                    <i class="fas fa-cricket-bat-ball"></i>
+                    <h3 class="counter" data-target="26000">0</h3>
+                    <p>Intl. Runs</p>
+                </div>
+                <div class="counter-box">
+                    <i class="fas fa-trophy"></i>
+                    <h3 class="counter" data-target="80">0</h3>
+                    <p>Centuries</p>
+                </div>
+                <div class="counter-box">
+                    <i class="fab fa-instagram"></i>
+                    <h3 class="counter" data-target="265">0</h3>
+                    <p>M Followers</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="timeline" class="section-padding bg-alt">
+        <div class="container">
+            <h2 class="section-title">Career Milestones</h2>
+            <div class="timeline-container" id="timeline-root"></div>
+        </div>
+    </section>
+
+    <section id="stats" class="section-padding">
+        <div class="container">
+            <h2 class="section-title">Statistical Dominance</h2>
+            <div class="stats-controls">
+                <button class="filter-btn active" data-format="odi">ODI</button>
+                <button class="filter-btn" data-format="test">Test</button>
+                <button class="filter-btn" data-format="t20">T20I</button>
+            </div>
+            <div class="stats-grid">
+                <div class="chart-container">
+                    <canvas id="statsChart"></canvas>
+                </div>
+                <div class="achievements-table-wrapper">
+                    <h3>Key Achievements</h3>
+                    <table id="achievements-table">
+                        <thead>
+                            <tr>
+                                <th onclick="sortTable(0)">Metric <i class="fas fa-sort"></i></th>
+                                <th onclick="sortTable(1)">Value <i class="fas fa-sort"></i></th>
+                            </tr>
+                        </thead>
+                        <tbody id="table-body"></tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="gallery" class="section-padding bg-alt">
+        <div class="container">
+            <h2 class="section-title">Gallery</h2>
+            <div class="gallery-filters">
+                <button class="g-btn active" data-filter="all">All</button>
+                <button class="g-btn" data-filter="match">Matches</button>
+                <button class="g-btn" data-filter="award">Awards</button>
+                <button class="g-btn" data-filter="training">Training</button>
+            </div>
+            <div class="gallery-grid" id="gallery-root"></div>
+        </div>
+    </section>
+
+    <section id="contact" class="section-padding">
+        <div class="container">
+            <h2 class="section-title">Fan Zone</h2>
+            <div class="contact-wrapper">
+                <div class="socials">
+                    <h3>Follow The King</h3>
+                    <div class="social-icons">
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    </div>
+                </div>
+                <form id="fan-form">
+                    <h3>Send a Message</h3>
+                    <div class="form-group">
+                        <input type="text" id="name" placeholder="Your Name" required>
+                        <span class="error-msg"></span>
+                    </div>
+                    <div class="form-group">
+                        <input type="email" id="email" placeholder="Your Email" required>
+                        <span class="error-msg"></span>
+                    </div>
+                    <div class="form-group">
+                        <textarea id="message" rows="4" placeholder="Your Message for Virat..." required></textarea>
+                    </div>
+                    <button type="submit" class="submit-btn">Send Message</button>
+                    <p class="success-msg" id="form-feedback"></p>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Virat Kohli Portfolio. Built for fans.</p>
+    </footer>
+
+    <div id="info-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <img src="" alt="" id="modal-img">
+            <h3 id="modal-title"></h3>
+            <p id="modal-desc"></p>
+            <a href="#" target="_blank" id="modal-link" class="modal-link">Read More</a>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
